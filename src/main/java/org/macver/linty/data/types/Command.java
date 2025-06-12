@@ -1,4 +1,9 @@
 package org.macver.linty.data.types;
 
-public class Command {
+import dev.jorel.commandapi.CommandAPICommand;
+
+public interface Command {
+
+    CommandAPICommand getCommand();
+
 }

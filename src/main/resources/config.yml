@@ -1,0 +1,539 @@
+# ┌Config > Welcome───
+# │
+# │ This is the configuration file for Linty. After you save your changes, you'll need to use the command
+# │ "/linty reload" or restart the server to apply the changes. You can also configure Linty interactively using the
+# │ in-game command "/linty config". This is the recommended way to change Linty's configuration because it is safer and
+# │ can better resolve potential problems.
+# │
+# │ Linty has a first-time interactive setup, so if you've just installed the plugin, it's much easier to do first-time
+# │ setup in the game. You must be an operator.
+# │
+# │ The welcome value is automatically set to false upon completing initial configuration. If you want to skip initial
+# │ guided configuration, set this value to false. There isn't really a good reason to set this value back to true, but
+# │ you can if you want to, and it will cause Linty to ask you to complete the initial guided configuration again.
+# │
+# │ Default:
+# │   welcome: true
+# │
+# │ Example:
+# │   welcome: false
+# │
+# └───
+welcome: true
+
+# This double bar indicates that this is the end of a major section. A single bar indicates the end of a minor section.
+# 🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀
+
+# ┌Config > Developer───
+# │
+# │ The developer section contains options that are relevant to debugging or developing the plugin. Under normal
+# │ conditions, you should not have to modify these options.
+# │
+# └───
+developer:
+
+  # ┌Config > Developer > Debug Mode───
+  # │
+  # │ The debug mode defines how logging messages are sent. This is mostly for debugging purposes.
+  # │
+  # │ In "all" mode, Linty log messages are sent to all players on the server and the console.
+  # │
+  # │ In "op" mode, Linty log messages are sent to all operators on the server and the console.
+  # │
+  # │ In "player" mode, Linty log messages are sent to the player who triggered the operation that sent a log message
+  # │ and the console.
+  # │
+  # │ In "console" mode, Linty log messages are sent to the console only.
+  # │
+  # │ In "none" mode, only warnings and errors are sent to the console.
+  # │
+  # │ In "silent" mode, only errors are sent to the console.
+  # │
+  # │ Default
+  # │   debugMode: "none"
+  # │
+  # │ Example
+  # │   debugMode: "console"
+  # └───
+  debugMode: "none"
+
+# End of developer settings
+# 🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀
+
+claims:
+
+  # ┌Config > Claims > Economy───
+  # │
+  # │ Below, you can configure economy settings. Economy functions require the Vault API
+  # │ (https://www.spigotmc.org/resources/vault.34315/) and a compatible economy plugin.
+  # │
+  # └───
+  economy:
+
+    # ┌Config > Claims > Economy > Creation───
+    # │
+    # │ Below, you can configure the cost of creating a claim. If the player cannot afford to create a claim, the claim
+    # │ creation will fail.
+    # │
+    # └───
+    creation:
+
+      # ┌Config > Claims > Economy > Creation > Fee───
+      # │
+      # │ The constant fee for creating any new claim. This is added to the cost per block.
+      # │
+      # │ Default
+      # │   fee: 0
+      # │
+      # │ Example
+      # │   fee: 20
+      # └───
+      fee: 0
+
+      # ┌Config > Claims > Economy > Creation > Cost Per Block───
+      # │
+      # │ The per-block fee for creating any new claim, calculated by the x-length and z-length of the area. This is
+      # │ added to the constant fee.
+      # │
+      # │ Default
+      # │   costPerBlock: 0
+      # │
+      # │ Example
+      # │   costPerBlock: 2
+      # └───
+      costPerBlock: 0
+
+    # End of claims > economy > creation settings
+    # ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+    # ┌Config > Claims > Economy > Removal───
+    # │
+    # │ Below, you can configure the reward for removing a claim.
+    # │
+    # └───
+    removal:
+
+      # ┌Config > Claims > Economy > Removal > Reward───
+      # │
+      # │ The constant reward for removing any claim. This is added to the reward per block.
+      # │
+      # │ Default
+      # │   reward: 0
+      # │
+      # │ Example
+      # │   reward: 20
+      # └───
+      reward: 0
+
+      # ┌Config > Claims > Economy > Removal > Reward Per Block───
+      # │
+      # │ The per-block fee for creating any new claim, calculated by the x-length and z-length of the area. This is
+      # │ added to the constant fee.
+      # │
+      # │ Default
+      # │   costPerBlock: 0
+      # │
+      # │ Example
+      # │   costPerBlock: 2
+      # └───
+      rewardPerBlock: 0
+
+    # End of claims > economy > removal settings
+    # ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  # ┌Config > Claims > Enter/Exit Notifications───
+  # │
+  # │ Below, you can configure enter and exit notifications. When a player enters a claim, there will be an actionbar
+  # │ title announcing the claim to the player to let them know they are in a protected area.
+  # │
+  # └───
+  enterExitNotifications:
+
+    # ┌Config > Claims > Enter/Exit Notifications > Enabled───
+    # │
+    # │ Whether enter/exit notifications should be shown to players entering or exiting a claim. This only sets the
+    # │ default value. If you also want to prevent players from overriding this, you should disable configurable.
+    # │
+    # │ Default
+    # │   enabled: true
+    # │
+    # │ Example
+    # │   enabled: false
+    # └───
+    enabled: true
+
+    # ┌Config > Claims > Enter/Exit Notifications > Show Owner───
+    # │
+    # │ Whether enter/exit notifications should display the username of the owner of the claim.
+    # │
+    # │ Default
+    # │   showOwner: true
+    # │
+    # │ Example
+    # │   showOwner: false
+    # └───
+    showOwner: true
+
+    # ┌Config > Claims > Enter/Exit Notifications > Show Name───
+    # │
+    # │ Whether enter/exit notifications should display the name of the claim.
+    # │
+    # │ Default
+    # │   showName: true
+    # │
+    # │ Example
+    # │   showName: false
+    # └───
+    showName: true
+
+    # ┌Config > Claims > Enter/Exit Notifications > Configurable───
+    # │
+    # │ Whether enter/exit notifications can be enabled and disabled per-player.
+    # │
+    # │ Default
+    # │   configurable: true
+    # │
+    # │ Example
+    # │   configurable: false
+    # └───
+    configurable: true
+
+  # End of claims > enter/exit notifications settings
+  # ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  # ┌Config > Area───
+  # │
+  # │ Below, you can configure claim areas.
+  # │
+  # └───
+  area:
+
+    # ┌Config > Claims > Area > Allow Polygonal Claims───
+    # │
+    # │ Whether to allow the creation of polygonal claim shapes.
+    # │
+    # │ Polygonal claims can have more complex shapes than rectangular claims.
+    # │
+    # │ Settings this to false does not remove existing polygonal claims.
+    # │
+    # │ Default
+    # │   allowPoly: false
+    # │
+    # │ Example
+    # │   allowPoly: true
+    # └───
+    allowPolygonalClaims: false
+
+    # ┌Config > Claims > Area > Height Mode───
+    # │
+    # │ The height mode defines whether claims should be two-dimensional or three-dimensional.
+    # │
+    # │ In "2d" mode, claim creation disregards height and extends the claim from the bottom of the world to the top of
+    # │ the world. Claims are prevented from being resized vertically.
+    # │
+    # │ In "3d" mode, claim height is specified at claim creation and can be adjusted like the X and Z dimensions.
+    # │
+    # │ If you switch the mode from "2d" to "3d", claim heights will not change, but the height will become adjustable.
+    # │
+    # │ If you switch the mode form "3d" to "2d", all claims which would not overlap others will be extended from the
+    # │ bottom to the top of the world.
+    # │
+    # │ Default
+    # │   heightMode: "2d"
+    # │
+    # │ Example
+    # │   heightMode: "3d"
+    # └───
+    heightMode: "2d"
+
+  # End of claims > area settings
+  # ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  # ┌Config > Claims > Worlds───
+  # │
+  # │ Below, you can configure in which worlds claims can be created.
+  # │
+  # └───
+  worlds:
+
+    # ┌Config > Claims > Worlds > Inverted───
+    # │
+    # │ Whether to invert the overrides list. By default, worlds added to the claims.worlds.overrides list will have
+    # │ claim creation disabled. You can invert this behavior by setting this value to true. If true, worlds added to
+    # │ the overrides list will have claim creation enabled, and all other worlds will have claim creation disabled.
+    # │ Changing this value will not delete any claims. You can do that in the bulk editor.
+    # │
+    # │ Default
+    # │   inverted: false
+    # │
+    # │ Example
+    # │   inverted: true
+    # └───
+    inverted: false
+
+    # ┌Config > Claims > Worlds > Overrides───
+    # │
+    # │ Worlds added to this list will override the default claim creation behavior. If claims.worlds.inverted is false,
+    # │ which is the default value, worlds added to this list will have claim creation disabled.
+    # │ In "2d" mode, claim creation disregards height and extends the claim from the bottom of the world to the top of
+    # │ the world. Claims are prevented from being resized vertically.
+    # │
+    # │ In "3d" mode, claim height is specified at claim creation and can be adjusted like the X and Z dimensions.
+    # │
+    # │ If you switch the mode from "2d" to "3d", claim heights will not change, but the height will become adjustable.
+    # │
+    # │ If you switch the mode form "3d" to "2d", all claims which would not overlap others will be extended from the
+    # │ bottom to the top of the world.
+    # │
+    # │ Default
+    # │   overrides:
+    # │
+    # │ Example
+    # │   overrides:
+    # │     - "minecraft:the_nether"
+    # │     - "minecraft:the_end"
+    # └───
+    overrides:
+
+  # End of claims > worlds settings
+  # ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  # ┌Config > Claims > Expiry───
+  # │
+  # │ Below, you can configure how claims expire. When a claim *expires*, build permissions are granted to all
+  # │ players. When a claim *extinguishes*, it is deleted entirely.
+  # │
+  # └───
+  expiry:
+
+    # ┌Config > Claims > Expiry > Reset Mode───
+    # │
+    # │ The reset mode defines how claim expiration and extinguish timers are reset. The reset mode can be either
+    # │ "connection" or "activity".
+    # │
+    # │ In "connection" mode, claim expiration and extinguish timers will reset when a player joins or leaves the
+    # │ server. This ensures that all their claims stay protected as long as the player joins the game within the
+    # │ allowed time window.
+    # │
+    # │ In "activity" mode, claim expiration and extinguish timers will reset when a player enters or exits the claim.
+    # │ This ensures that claims which players do not regularly visit are not indefinitely held by them.
+    # │
+    # │ In "none" mode, claim expiration and extinguish timers will never reset. This is probably not what you want.
+    # │
+    # │ Default
+    # │   resetMode: "connection"
+    # │
+    # │ Example
+    # │   resetMode: "activity"
+    # └───
+    resetMode: "connection"
+
+    # ┌Config > Claims > Expiry > Expire Time───
+    # │
+    # │ The expire time defines the number of days after inactivity that a claim should expire for a certain group.
+    # │
+    # │ You can define different expire times for different permission groups. If a player is part of multiple groups,
+    # │ higher-priority groups will override lower priority groups. If the default group is set to 30 and the admin
+    # │ group is set to 60, players with both the default group and admin group will have a 60-day expire time. This
+    # │ works both for increased times and decreased times.
+    # │
+    # │ If you don't have permissions set up using Vault and a permissions plugin, only the "defualt" group will work.
+    # │
+    # │ You can set the time to 0 to keep claims from ever expiring.
+    # │
+    # │ Default
+    # │   expireTime:
+    # │     default: 30
+    # │
+    # │ Example
+    # │   expireTime:
+    # │     default: 14 # By default, a player's claims will expire after 14 days.
+    # │     member: 30 # A member's claims will expire after 30 days.
+    # │     admin: 0 # Claims made by admins will never expire.
+    # └───
+    expireTime:
+      default: 30
+
+    # ┌Config > Claims > Expiry > Extinguish Time───
+    # │
+    # │ The extinguish time defines the number of days after inactivity that a claim should extinguish for a certain
+    # │ group.
+    # │
+    # │ You can define different extinguish times for different permission groups. If a player is part of multiple
+    # │ groups, higher-priority groups will override lower priority groups. If the default group is set to 30 and the
+    # │ admin group is set to 60, players with both the default group and admin group will have a 60-day extinguish
+    # │ time. This works both for increased times and decreased times.
+    # │
+    # │ If the extinguish time is before the expiry time, the claim will not wait to expire. It will instead immediately
+    # │ extinguish.
+    # │
+    # │ If you don't have permissions set up using Vault and a permissions plugin, only the "defualt" group will work.
+    # │
+    # │ You can set the time to 0 to keep claims from ever extinguishing.
+    # │
+    # │ Default
+    # │   extinguishTime:
+    # │     default: 60
+    # │
+    # │ Example
+    # │   extinguishTime:
+    # │     default: 14 # By default, a player's claims will extinguish after 14 days.
+    # │     member: 60 # By default, a player's claims will extinguish after 60 days.
+    # │     admin: 0 # Claims made by admins will never extinguish.
+    # └───
+    extinguishTime:
+      default: 60
+
+  # End of claims > expiry settings
+  # ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+# End of claims settings
+# 🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀
+
+# ┌Config > Interface───
+# │
+# │ The interface section contains options that define how Linty's interfaces look and feel.
+# │
+# └───
+interface:
+
+  # ┌Config > Interface > Show Tooltips───
+  # │
+  # │ Whether to show hover tooltips in Linty's interfaces.
+  # │
+  # │ Default
+  # │   showTooltips: true
+  # │
+  # │ Example
+  # │   showTooltips: false
+  # └───
+  showTooltips: true
+
+  # ┌Config > Interface > Colors───
+  # │
+  # │ The colors section contains options that define the colors used in Linty's interfaces.
+  # │
+  # └───
+  colors:
+
+    # ┌Config > Interface > Colors > Text───
+    # │
+    # │ The color of text in Linty interfaces. Can be any Minecraft color or a hex code starting with a # sign.
+    # │
+    # │ Default
+    # │   text: "white"
+    # │
+    # │ Example
+    # │   text: "yellow"
+    # └───
+    text: "white"
+
+    # ┌Config > Interface > Colors > Special───
+    # │
+    # │ The color of text which is special, like when displaying a command or web link, in Linty interfaces. Can be any
+    # │ Minecraft color or a hex code starting with a # sign.
+    # │
+    # │ Default
+    # │   special: "aqua"
+    # │
+    # │ Example
+    # │   special: "dark_aqua"
+    # └───
+    special: "aqua"
+
+    # ┌Config > Interface > Colors > Borders───
+    # │
+    # │ The color of interface borders in Linty interfaces. Can be any Minecraft color or a hex code starting with a #
+    # │ sign.
+    # │
+    # │ Default
+    # │   borders: "dark_gray"
+    # │
+    # │ Example
+    # │   borders: "dark_green"
+    # └───
+    borders: "dark_gray"
+
+    # ┌Config > Interface > Colors > Buttons───
+    # │
+    # │ The color of the edges of buttons and other interactive objects in Linty interfaces. Can be any Minecraft color
+    # │ or a hex code starting with a # sign.
+    # │
+    # │ Default
+    # │   buttons: "gray"
+    # │
+    # │ Example
+    # │   buttons: "green"
+    # └───
+    buttons: "gray"
+
+    # ┌Config > Interface > Colors > Notable───
+    # │
+    # │ The color of notable text, like buttons, in Linty interfaces. Can be any Minecraft color or a hex code starting
+    # │ with a # sign.
+    # │
+    # │ Default
+    # │   notable: "blue"
+    # │
+    # │ Example
+    # │   notable: "gold"
+    # └───
+    notable: "blue"
+
+    # ┌Config > Interface > Colors > Emphasis───
+    # │
+    # │ The color of emphasized text, like titles, in Linty interfaces. Can be any Minecraft color or a hex code
+    # │ starting with a # sign.
+    # │
+    # │ Default
+    # │   emphasis: "gold"
+    # │
+    # │ Example
+    # │   emphasis: "light_purple"
+    # └───
+    emphasis: "gold"
+
+    # ┌Config > Interface > Colors > Dangerous───
+    # │
+    # │ The color of dangerous text or actions in Linty interfaces. Can be any Minecraft color or a hex code starting
+    # │ with a # sign.
+    # │
+    # │ Default
+    # │   dangerous: "red"
+    # │
+    # │ Example
+    # │   dangerous: "dark_red"
+    # └───
+    dangerous: "red"
+
+    # ┌Config > Interface > Colors > Progress───
+    # │
+    # │ The color of success or progress text in Linty interfaces. Can be any Minecraft color or a hex code starting
+    # │ with a # sign.
+    # │
+    # │ Default
+    # │   progress: "green"
+    # │
+    # │ Example
+    # │   progress: "aqua"
+    # └───
+    progress: "green"
+
+    # ┌Config > Interface > Colors > Progress───
+    # │
+    # │ The color of active elements in Linty interfaces. Can be any Minecraft color or a hex code starting with a #
+    # │ sign.
+    # │
+    # │ Default
+    # │   active: "yellow"
+    # │
+    # │ Example
+    # │   active: "white"
+    # └───
+    active: "yellow"
+
+  # End of interface > colors settings
+  # ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+# End of interface settings
+# 🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀

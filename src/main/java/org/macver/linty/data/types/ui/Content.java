@@ -1,16 +1,17 @@
 package org.macver.linty.data.types.ui;
 
 import net.md_5.bungee.api.chat.BaseComponent;
-import net.md_5.bungee.api.chat.TextComponent;
+import net.md_5.bungee.api.chat.ComponentBuilder;
+import org.macver.linty.data.types.ui.frame.Frame;
 
 import javax.annotation.Nonnull;
 
-public class Text implements UIElement {
+public class Content implements UIElement {
 
     @Nonnull
-    private BaseComponent contents = new TextComponent("null");
+    private BaseComponent contents;
 
-    public Text(@Nonnull BaseComponent component) {
+    public Content(@Nonnull BaseComponent component) {
         contents = component;
     }
 
@@ -19,13 +20,16 @@ public class Text implements UIElement {
         return contents;
     }
 
-    public Text setContents(BaseComponent contents) {
+    public Content setContents(BaseComponent contents) {
         this.contents = contents;
         return this;
     }
 
     @Override
-    public BaseComponent renderInFrames(int frameCount) {
-        return null;
+    public BaseComponent render(int frameCount) {
+        ComponentBuilder builder = new ComponentBuilder();
+        String frameEdge = Frame.getFrameEdgeString(frameCount);
+        builder.append(frameEdge).append(" ").append(this.getContents()).color(UIColor.TEXT.color);
+        return builder.build();
     }
 }
