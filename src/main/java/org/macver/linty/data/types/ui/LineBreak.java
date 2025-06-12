@@ -10,7 +10,7 @@ public class LineBreak implements UIElement {
     public BaseComponent render(int frameCount) {
         ComponentBuilder builder = new ComponentBuilder();
         String frameEdge = Frame.getFrameEdgeString(frameCount);
-        builder.append(frameEdge);
+        builder.append(frameEdge).reset().bold(false).color(UIColor.BORDERS.color);
         return builder.build();
     }
 }

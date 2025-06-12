@@ -29,7 +29,7 @@ public class Content implements UIElement {
     public BaseComponent render(int frameCount) {
         ComponentBuilder builder = new ComponentBuilder();
         String frameEdge = Frame.getFrameEdgeString(frameCount);
-        builder.append(frameEdge).append(" ").append(this.getContents()).color(UIColor.TEXT.color);
+        builder.append(frameEdge).color(UIColor.BORDERS.color).append(" ").append(this.getContents()).color(UIColor.TEXT.color);
         return builder.build();
     }
 }

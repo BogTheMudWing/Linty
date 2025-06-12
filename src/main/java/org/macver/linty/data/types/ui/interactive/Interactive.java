@@ -35,7 +35,7 @@ public interface Interactive extends UIElement {
     default BaseComponent render(int frameCount) {
         ComponentBuilder builder = new ComponentBuilder();
         String frameEdge = Frame.getFrameEdgeString(frameCount);
-        builder.append(frameEdge).append(" ").append(renderAlone());
+        builder.append(frameEdge).color(UIColor.BORDERS.color).append(" ").append(renderAlone());
         return builder.build();
     }
 

@@ -1,13 +1,16 @@
 package org.macver.linty.commands;
 
 import dev.jorel.commandapi.CommandAPICommand;
+import net.md_5.bungee.api.chat.HoverEvent;
 import net.md_5.bungee.api.chat.TextComponent;
+import net.md_5.bungee.api.chat.hover.content.Text;
 import org.macver.linty.data.types.Command;
 import org.macver.linty.data.types.ui.Content;
 import org.macver.linty.data.types.ui.LineBreak;
 import org.macver.linty.data.types.ui.frame.SimpleFrame;
 import org.macver.linty.data.types.ui.frame.TabbedFrame;
 import org.macver.linty.data.types.ui.interactive.Button;
+import org.macver.linty.data.types.ui.interactive.InteractiveType;
 import org.macver.linty.data.types.ui.interactive.Tab;
 
 public class CommandLinty implements Command {
@@ -21,7 +24,7 @@ public class CommandLinty implements Command {
                                             new Content(new TextComponent("Hello, world!")),
                                             new LineBreak(),
                                             new Content(new TextComponent("Here is a button.")),
-                                            new Button("Button"),
+                                            new Button("Button").setType(InteractiveType.NORMAL).setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new Text("This is a button."))),
                                             new SimpleFrame("Another frame")
                                                     .setButtons(
                                                             new Button("Frame button")

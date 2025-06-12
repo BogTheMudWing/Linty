@@ -81,10 +81,10 @@ public class TabbedFrame implements Frame {
         String outerFrameEdge = Frame.getFrameEdgeString(frameCount);
         String innerFrameEdge = Frame.getFrameEdgeString(frameCount + 1);
         // Create title bar
-        builder.append(outerFrameEdge).append("┌").color(UIColor.BORDERS.color).append(this.getTitle()).color(UIColor.EMPHASIS.color).bold(true).append("───\n").color(UIColor.BORDERS.color);
+        builder.append(outerFrameEdge).color(UIColor.EMPHASIS.color).append("┌").color(UIColor.BORDERS.color).append(this.getTitle()).color(UIColor.EMPHASIS.color).bold(true).append("───\n").bold(false).color(UIColor.BORDERS.color);
 
         // Add side connector
-        builder.append(outerFrameEdge).append("├").color(UIColor.BORDERS.color);
+        builder.append(outerFrameEdge).color(UIColor.EMPHASIS.color).append("├").color(UIColor.BORDERS.color);
 
         // For each tab, render the tab button
         List<Tab> rootTabs = this.getTabs();
@@ -105,7 +105,7 @@ public class TabbedFrame implements Frame {
         // Append to component builder
         builder.append(innerFrameEdge).color(UIColor.BORDERS.color).append("\n");
         for (UIElement element : elements) {
-            builder.append(element.render(frameCount)).append("\n");
+            builder.append(element.render(frameCount)).append("\n").reset();
         }
 
         // Create bottom bar

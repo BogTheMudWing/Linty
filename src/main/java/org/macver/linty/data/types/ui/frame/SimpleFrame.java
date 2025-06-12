@@ -92,7 +92,7 @@ public class SimpleFrame implements Frame {
         String outerFrameEdge = Frame.getFrameEdgeString(frameCount);
         String innerFrameEdge = Frame.getFrameEdgeString(frameCount + 1);
         // Create title bar
-        builder.append(outerFrameEdge).append("┌").color(UIColor.BORDERS.color).append(this.getTitle()).color(UIColor.EMPHASIS.color).append("───\n").color(UIColor.BORDERS.color);
+        builder.append(outerFrameEdge).color(UIColor.BORDERS.color).append("┌").color(UIColor.BORDERS.color).append(this.getTitle()).color(UIColor.EMPHASIS.color).append("───\n").bold(false).color(UIColor.BORDERS.color);
 
         // Elements are defined in the frame itself
         List<UIElement> elements = this.getElements();
@@ -102,7 +102,7 @@ public class SimpleFrame implements Frame {
         // Append to builder
         builder.append(innerFrameEdge).color(UIColor.BORDERS.color).append("\n");
         for (UIElement element : elements) {
-            builder.append(element.render(frameCount)).append("\n");
+            builder.append(element.render(frameCount)).append("\n").reset();
         }
 
         // Create bottom bar
