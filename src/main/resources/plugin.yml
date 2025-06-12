@@ -1,0 +1,7 @@
+name: Linty
+version: '1.0'
+main: org.macver.linty.Linty
+api-version: '1.21'
+prefix: Linty
+authors: [ BogTheMudWing ]
+description: An easy and intuitive player area claiming system.
