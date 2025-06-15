@@ -39,5 +39,6 @@ export default defineConfig({
       label: 'English',
       lang: 'en'
     }
-  }
+  },
+  base: '/linty/'
 })
