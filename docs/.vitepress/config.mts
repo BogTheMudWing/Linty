@@ -39,5 +39,7 @@ export default defineConfig({
       label: 'English',
       lang: 'en'
     }
-  }
+  },
+
+  cleanUrls: true
 })
