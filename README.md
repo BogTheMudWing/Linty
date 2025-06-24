@@ -4,7 +4,7 @@ An easy and intuitive player area claiming system.
 
 ## About
 
-Linty is not yet but may one day be a Minecraft Spigot plugin that allows players to create claims to protect their
+Linty is not yet but may one day be a Minecraft Spigot plugin that allows players to create claims to protect their buildings and belongings. Players can define areas which are protected from unwanted tampering or modification from other players.
 
 Linty focuses on:
 
