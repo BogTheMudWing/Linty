@@ -1,21 +1,27 @@
 package org.macver.linty.data.types.ui.interactive;
 
-import net.md_5.bungee.api.chat.BaseComponent;
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.HoverEvent;
 import net.md_5.bungee.api.chat.hover.content.Text;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 public class Button implements Interactive {
 
+    @Nullable private final String id;
     @Nonnull
     private String text;
     private HoverEvent hoverEvent = new HoverEvent(HoverEvent.Action.SHOW_TEXT, new Text("This is a button."));
     private ClickEvent clickEvent = null;
     private InteractiveType type = InteractiveType.DISABLED;
 
+    public Button(@Nullable String id, @Nonnull String text) {
+        this.id = id;
+        this.text = text;
+    }
     public Button(@Nonnull String text) {
+        id = null;
         this.text = text;
     }
 
@@ -58,5 +64,11 @@ public class Button implements Interactive {
     @Override
     public InteractiveType getType() {
         return type;
+    }
+
+    @Nullable
+    @Override
+    public String id() {
+        return id;
     }
 }

@@ -390,6 +390,32 @@ claims:
 # End of claims settings
 # 🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀
 
+# ┌Config > Guidance───
+# │
+# │ The interface section contains options that define how Linty guides and helps players.
+# │
+# └───
+guidance:
+
+  # ┌Config > Guidance > Remind Claim on Chest Placement───
+  # │
+  # │ Whether to remind the player to create a claim when
+  # │
+  # │ In "always" mode, Linty will send a reminder when a player first places a chest for every play session.
+  # │ In "first" mode, Linty will send a reminder the first time a player places a chest ever.
+  # │ In "never" mode, Linty will never remind players to create a claim when the place a chest.
+  # │
+  # │ Default
+  # │   showTooltips: true
+  # │
+  # │ Example
+  # │   showTooltips: false
+  # └───
+  remindClaimOnChestPlacement: "first"
+
+# End of guidance settings
+# 🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀
+
 # ┌Config > Interface───
 # │
 # │ The interface section contains options that define how Linty's interfaces look and feel.

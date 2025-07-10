@@ -15,12 +15,23 @@ import java.util.List;
 
 public class TabbedFrame implements Frame {
 
+    @Nullable private final String id;
     @Nonnull private List<Tab> tabs = new ArrayList<>();
     int activeTab = 0;
     @Nonnull private List<Button> buttons = new ArrayList<>();
     @Nullable private String title = null;
 
     public TabbedFrame(@Nullable String title, Tab... tab) {
+        this.id = null;
+        contruct(title, tab);
+    }
+
+    public TabbedFrame(@Nullable String id, @Nullable String title, Tab... tab) {
+        this.id = id;
+        contruct(title, tab);
+    }
+
+    private void contruct(@Nullable String title, Tab[] tab) {
         this.title = title;
         if (tab == null || tab.length == 0) return;
         tabs.addAll(List.of(tab));
@@ -113,5 +124,11 @@ public class TabbedFrame implements Frame {
 
         return builder.build();
 
+    }
+
+    @Nullable
+    @Override
+    public String id() {
+        return this.id;
     }
 }

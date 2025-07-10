@@ -1,0 +1,17 @@
+{
+    "scheme": 1,
+    "elements": [
+        {
+            "type": "simple_frame",
+            "title": "Claims Manu",
+            "elements": [
+                {
+                    "id": "create_claim",
+                    "type": "button",
+                    "text": "Create",
+                    "interact_type": "progressive"
+                }
+            ]
+        }
+    ]
+}

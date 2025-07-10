@@ -101,4 +101,10 @@ public class Tab implements Interactive {
     public List<UIElement> getContents() {
         return contents;
     }
+
+    @Nullable
+    @Override
+    public String id() {
+        return "";
+    }
 }

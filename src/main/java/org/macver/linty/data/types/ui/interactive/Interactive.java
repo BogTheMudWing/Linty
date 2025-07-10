@@ -41,7 +41,7 @@ public interface Interactive extends UIElement {
 
     default BaseComponent renderAlone() {
         ComponentBuilder builder = new ComponentBuilder();
-        builder.append("[").color(UIColor.BUTTONS.color).append(this.getText()).color(getType().color).append("]").color(UIColor.BUTTONS.color);
+        builder.append("[").color(UIColor.BUTTONS.color).append(this.getText()).color(getType().color).event(this.getHoverEvent()).event(this.getClickEvent()).append("]").color(UIColor.BUTTONS.color);
         return builder.build();
     }
 }

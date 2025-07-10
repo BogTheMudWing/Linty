@@ -19,10 +19,20 @@ public class SimpleFrame implements Frame {
     private List<Button> buttons = new ArrayList<>();
     @Nullable
     private String title = null;
+    @Nullable
+    private final String id;
 
-    public SimpleFrame() {}
+    public SimpleFrame() {
+        this.id = null;
+    }
 
     public SimpleFrame(@Nullable String title) {
+        this.id = null;
+        this.title = title;
+    }
+
+    public SimpleFrame(@Nullable String id, @Nullable String title) {
+        this.id = id;
         this.title = title;
     }
 
@@ -110,5 +120,11 @@ public class SimpleFrame implements Frame {
 
         return builder.build();
 
+    }
+
+    @Nullable
+    @Override
+    public String id() {
+        return id;
     }
 }
