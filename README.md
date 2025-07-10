@@ -16,7 +16,8 @@ Linty focuses on:
   - Players should be able to choose how much guidance they want.
 - Minimal file editing.
 - Optional features through optional dependencies, simple by default.
-- Particle-based claim visualizations
+- Particle-based claim visualizations.
+- Undo for all actions instead of confirmation prompts.
 
 ## Features
 
